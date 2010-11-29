@@ -32,6 +32,7 @@
 	 */
 	
 	self.webView.frameLoadDelegate = self;
+	[self.webView setContinuousSpellCheckingEnabled:YES];
 	[self.webView setMainFrameURL:@"https://www.google.com/voice#inbox"];
 }
 

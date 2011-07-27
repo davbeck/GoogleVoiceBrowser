@@ -12,36 +12,22 @@
 
 @implementation GVBAppDelegate
 
-@synthesize window;
-@synthesize webView;
-@synthesize zoomIn;
+@synthesize window = _window;
+@synthesize webView = _webView;
+@synthesize zoomIn = _zoomIn;
 
 
 #pragma mark -
 #pragma mark NSApplication Delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[zoomIn setKeyEquivalent:@"+"];
-	[zoomIn setKeyEquivalentModifierMask:NSCommandKeyMask];
-	
-	/*
-	NSWindowCollectionBehavior behavior = [self.window collectionBehavior];
-	behavior |= NSWindowCollectionBehaviorMoveToActiveSpace;
-	behavior &= !NSWindowCollectionBehaviorCanJoinAllSpaces;
-	[self.window setCollectionBehavior:behavior];
-	 */
+	[self.zoomIn setKeyEquivalent:@"+"];
+	[self.zoomIn setKeyEquivalentModifierMask:NSCommandKeyMask];
 	
 	self.webView.frameLoadDelegate = self;
 	[self.webView setContinuousSpellCheckingEnabled:YES];
 	[self.webView setMainFrameURL:@"https://www.google.com/voice#inbox"];
 }
-
-/*
-- (void)applicationDidBecomeActive:(NSNotification *)aNotification
-{
-	[self.window makeKeyAndOrderFront:self];
-}
- */
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
 {

@@ -11,16 +11,16 @@
 @class WebView;
 
 @interface GVBAppDelegate : NSObject <NSApplicationDelegate> {
-	NSWindow *window;
-	WebView *webView;
+	NSWindow *_window;
+	WebView *_webView;
 	
-	NSMenuItem *zoomIn;
+	NSMenuItem *_zoomIn;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet WebView *webView;
+@property (nonatomic, retain) IBOutlet NSWindow *window;
+@property (nonatomic, retain) IBOutlet WebView *webView;
 
-@property (assign) IBOutlet NSMenuItem *zoomIn;
+@property (nonatomic, retain) IBOutlet NSMenuItem *zoomIn;
 
 - (IBAction)refresh:(id)sender;
 
